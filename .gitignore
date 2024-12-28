@@ -1,1 +1,5 @@
 .env
+*.mp3
+.DS_Store
+CommonVoice_20_fa/
+pretrained_models/
