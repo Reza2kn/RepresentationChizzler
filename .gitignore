@@ -1,5 +1,29 @@
+# Environment and system files
 .env
-*.mp3
 .DS_Store
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Audio files
+*.mp3
+*.wav
+*.flac
+*.ogg
+
+# Large directories
 CommonVoice_20_fa/
 pretrained_models/
+VADOnly/
+flagged/
+
+# Keep MP-SENet model files
+!MP-SENet/best_ckpt/g_best_dns
+!MP-SENet/best_ckpt/config.json
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
