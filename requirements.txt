@@ -1,0 +1,11 @@
+torch>=2.5.1
+torchaudio>=2.5.1
+numpy>=2.0.2
+pydub>=0.25.1
+python-dotenv>=1.0.1
+gradio>=4.44.1
+soundfile>=0.13.0
+rich>=13.9.4
+librosa>=0.10.2
+pesq>=0.0.4
+av>=14.0.1

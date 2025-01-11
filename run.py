@@ -1,7 +1,6 @@
 import torch
 import torchaudio
 import numpy as np
-from pydub import AudioSegment
 from typing import Tuple, List, Dict
 from dotenv import load_dotenv
 import os
@@ -14,12 +13,8 @@ import soundfile as sf
 from datetime import datetime
 from rich.console import Console
 import time
-
-# Add MP-SENet to path
-sys.path.append(str(Path(__file__).parent / "MP-SENet"))
-from dataset import mag_pha_stft, mag_pha_istft
-from models.model import MPNet
-from env import AttrDict
+import av  # Add av import
+from pydub import AudioSegment
 
 # Initialize console for pretty printing
 console = Console()
@@ -30,6 +25,15 @@ def log_progress(message: str, level: int = 1) -> None:
     timestamp = datetime.now().strftime("%H:%M:%S")
     console.print(f"[dim]{timestamp}[/dim] {indent}[bold blue]►[/bold blue] {message}")
     sys.stdout.flush()  # Force flush stdout separately
+
+# Add MP-SENet to path
+current_dir = Path(__file__).parent.resolve()
+mp_senet_dir = current_dir / "MP-SENet"
+sys.path.append(str(mp_senet_dir))
+
+from dataset import mag_pha_stft, mag_pha_istft
+from models.model import MPNet
+from env import AttrDict
 
 # Load environment variables
 load_dotenv()
@@ -56,8 +60,8 @@ def initialize_models():
     
     # Initialize MP-SENet
     log_progress("🎧 Loading MP-SENet model...", 2)
-    checkpoint_path = str(Path(__file__).parent / "MP-SENet/best_ckpt/g_best_dns")
-    config_file = str(Path(checkpoint_path).parent / "config.json")
+    checkpoint_path = mp_senet_dir / "best_ckpt/g_best_dns"
+    config_file = mp_senet_dir / "best_ckpt/config.json"
     
     with open(config_file) as f:
         config = AttrDict(json.loads(f.read()))

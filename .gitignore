@@ -1,29 +1,36 @@
-# Environment and system files
-.env
-.DS_Store
+# Python
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
+*.py[cod]
+*$py.class
+*.so
+.Python
+.env
 
-# Audio files
-*.mp3
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Project-specific
+MP-SENet/
 *.wav
+*.mp3
 *.flac
 *.ogg
 
-# Large directories
-CommonVoice_20_fa/
-pretrained_models/
-VADOnly/
-flagged/
+# macOS
+.DS_Store
 
-# Keep MP-SENet model files
-!MP-SENet/best_ckpt/g_best_dns
-!MP-SENet/best_ckpt/config.json
-
-# IDE files
-.vscode/
-.idea/
-*.swp
-*.swo
+# Logs
+*.log

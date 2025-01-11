@@ -19,21 +19,38 @@ A powerful two-stage audio processing tool that combines Voice Activity Detectio
 
 ## 🚀 Installation
 
-1. Create a new conda environment:
+1. Clone this repository:
    ```bash
-   conda create -n speech_enhance_new python=3.9
-   conda activate speech_enhance_new
+   git clone https://github.com/YOUR_USERNAME/RepresentationChizzler.git
+   cd RepresentationChizzler
    ```
 
-2. Install dependencies:
+2. Create and activate a virtual environment:
    ```bash
-   conda install numpy=1.22.4 scipy=1.7.3 librosa=0.9.2
-   pip install torch torchaudio gradio pydub rich
+   python -m venv .venv
+   source .venv/bin/activate  # On Windows, use: .venv\Scripts\activate
    ```
 
-3. Download the MP-SENet model:
-   - Place the model file in `MP-SENet/best_ckpt/g_best_dns`
-   - Place the config file in `MP-SENet/best_ckpt/config.json`
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. Set up environment variables:
+   - Create a `.env` file in the project root
+   - Add your Hugging Face token:
+     ```
+     HF_TOKEN=your_huggingface_token_here
+     ```
+
+5. Download MP-SENet:
+   - Clone the MP-SENet repository:
+     ```bash
+     git clone https://github.com/yxlu-0102/MP-SENet.git
+     ```
+   - Download the model checkpoint and config files:
+     - Place `g_best_dns` in `MP-SENet/best_ckpt/`
+     - Place `config.json` in `MP-SENet/best_ckpt/`
 
 ## 🎮 Usage
 
