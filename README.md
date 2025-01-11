@@ -21,7 +21,7 @@ A powerful two-stage audio processing tool that combines Voice Activity Detectio
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/RepresentationChizzler.git
+   git clone https://github.com/Reza2kn/RepresentationChizzler.git
    cd RepresentationChizzler
    ```
 
